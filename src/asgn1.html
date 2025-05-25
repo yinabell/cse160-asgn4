@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Change a point color</title>
+  </head> 
+
+  <body onload="main()">
+    <canvas id="webgl" width="400" height="400">
+    Please use a browser that supports "canvas"
+    </canvas>
+
+    <p id="fpsDisplay">Waiting for update...</p>  
+
+
+    <div>
+
+      <label> Wow! Fly Mode: <button id="toggleFlyMode">OFF</button></label>
+
+      <label>Move Camera with Mouse: </label>
+        <button id="toggleMouseControl">OFF</button> 
+      <p>
+
+      Rotate Camera 360 <input type = "range" min = "0" max = "360" value = "0" class = "slider" id = "angleSlide">
+      <p>
+      Field of View <input type = "range" min = "10" max = "100" value = "50" class = "slider" id = "fov">
+
+    </div> 
+
+    <img src="goosecat.png" width="300" height="300" alt="Draw a Picture"> 
+    This is my cat pixie
+ 
+    <script src="../lib/webgl-utils.js"></script>
+    <script src="../lib/webgl-debug.js"></script>
+    <script src="../lib/cuon-utils.js"></script>
+    <script src="../lib/cuon-matrix-cse160.js"></script>
+    <script src="asgn1.js"></script>
+    <script src="point.js"></script>
+    <script src="circle.js"></script>
+    <script src="triangle.js"></script>
+    <script src="cube.js"></script>
+
+    <script src="camera.js"></script>
+
+  </body>
+</html>
+ 
