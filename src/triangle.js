@@ -81,3 +81,63 @@ function drawTriangle3DUV(vertices, uv){
 
     gl.drawArrays(gl.TRIANGLES, 0, n);
 }
+
+function drawTriangle3DUVNormal(vertices, uv, normals){
+
+    // num of vertices 
+    var n = vertices.length/3; 
+
+    // position 
+    var vertexBuffer = gl.createBuffer(); 
+
+    // exit if buffer not created 
+    if(!vertexBuffer){
+        return;
+    } 
+
+    // bind buffer 
+    gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer); 
+
+    // vertex data into buffer 
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.DYNAMIC_DRAW); 
+
+    gl.vertexAttribPointer(a_Position, 3, gl.FLOAT, false, 0, 0);
+    gl.enableVertexAttribArray(a_Position);
+
+    // uv
+    var uvBuffer = gl.createBuffer(); 
+
+    // exit if buffer not created 
+    if(!uvBuffer){
+        return;
+    } 
+
+    // bind buffer 
+    gl.bindBuffer(gl.ARRAY_BUFFER, uvBuffer); 
+
+    // uv data into buffer 
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(uv), gl.DYNAMIC_DRAW); 
+
+    gl.vertexAttribPointer(a_UV, 2, gl.FLOAT, false, 0, 0);
+    gl.enableVertexAttribArray(a_UV); 
+
+    // normal 
+    var normalBuffer = gl.createBuffer(); 
+
+    // exit if buffer not created 
+    if(!normalBuffer){
+        return;
+    } 
+
+    // bind buffer 
+    gl.bindBuffer(gl.ARRAY_BUFFER, normalBuffer); 
+
+    // normal data into buffer 
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(normals), gl.DYNAMIC_DRAW); 
+
+    gl.vertexAttribPointer(a_Normal, 3, gl.FLOAT, false, 0, 0);
+    gl.enableVertexAttribArray(a_Normal);
+
+    // DRAW
+    gl.drawArrays(gl.TRIANGLES, 0, n);
+}

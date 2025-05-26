@@ -12,13 +12,39 @@
 
     <p id="fpsDisplay">Waiting for update...</p>  
 
-
-    <div>
+    <div> 
 
       <label> Wow! Fly Mode: <button id="toggleFlyMode">OFF</button></label>
 
       <label>Move Camera with Mouse: </label>
         <button id="toggleMouseControl">OFF</button> 
+      <p> 
+
+      Pick an ambient light color: 
+      <input type = "color" id = "color" name = "Light Color" value = "#4d4d4d" />
+      <p>
+
+      Change X Light: <input type = "range" min = "-250" max = "250" value = "0" class = "slider" id = "lightX"> 
+      <p>
+      Change Y Light: <input type = "range" min = "-250" max = "250" value = "50" class = "slider" id = "lightY">
+      <p>
+      Change Z Light: <input type = "range" min = "-250" max = "250" value = "200" class = "slider" id = "lightZ">
+      <p> 
+
+      <button type = "button" id = "normalOn">Normal On</button> 
+
+      <button type = "button" id = "lightOn">Light On</button> 
+
+      <button type = "button" id = "spotlightOn">Spotlight On</button>  
+
+      <p>
+
+      <button type = "button" id = "normalOff">Normal Off</button>
+
+      <button type = "button" id = "lightOff">Light Off</button>
+
+      <button type = "button" id = "spotlightOff">Spotlight Off</button>
+
       <p>
 
       Rotate Camera 360 <input type = "range" min = "0" max = "360" value = "0" class = "slider" id = "angleSlide">
@@ -39,6 +65,7 @@
     <script src="circle.js"></script>
     <script src="triangle.js"></script>
     <script src="cube.js"></script>
+    <script src="sphere.js"></script>
 
     <script src="camera.js"></script>
 
